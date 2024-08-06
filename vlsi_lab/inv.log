@@ -1,0 +1,33 @@
+Circuit: *** SPICE deck for cell inv{sch} from library Inverter
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+
+Multiply defined .measure result:  tf   
+
+  Each .measure statement needs a unique result name.
+
+Date: Wed Jun 26 04:33:22 2024
+Total elapsed time: 0.037 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2114
+traniter = 2108
+tranpoints = 1054
+accept = 1054
+rejected = 0
+matrix size = 5
+fillins = 0
+solver = Normal
+Matrix Compiler1:      12 opcodes  0.1/[0.0]/0.0
+Matrix Compiler2: 311 bytes object code size  0.1/0.1/[0.0]
+

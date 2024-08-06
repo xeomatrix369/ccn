@@ -1,0 +1,23 @@
+
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: ram{sch}
+Mnmos@0 q net@13 gnd gnd NMOS L=0.4U W=2U
+Mnmos@1 gnd net@13 net@13 gnd NMOS L=0.4U W=2U
+Mnmos@2 q wl bl gnd NMOS L=0.4U W=2U
+Mnmos@3 blb wl net@13 gnd NMOS L=0.4U W=2U
+Mpmos@0 vdd net@13 q vdd PMOS L=0.4U W=2U
+Mpmos@1 net@13 net@13 vdd vdd PMOS L=0.4U W=2U
+
+* Spice Code nodes in cell cell 'ram{sch}'
+vdd vdd 0 DC 5
+va bl 0 DC pwl 10ns 0 20ns 5 50ns 5 60ns 0 90ns 0 100ns 5 130ns 5 140ns 0
+vb blb 0 DC pwl 10ns 5 20ns 0 50ns 0 60ns 5 90ns 5 100ns 0 130ns 0 140ns 5
+vc wl 0 DC pwl 0ns 0 10ns 5 30ns 5 40ns 0
+cload 0 q 100fF
+.measure tran tf trig v(q) val=4.5 fall=1 td=8ns targ v(q) val=0.5 fall=1
+.measure tran tf trig v(q) val=0.5 rise=1 td=8ns targ v(q) val=4.5 rise=1
+.tran 0 200ns
+.include C:\Users\hamza\OneDrive\Documents\electric\C5_models.txt
+.END
